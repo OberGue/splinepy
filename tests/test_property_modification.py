@@ -8,29 +8,20 @@ class InplaceModificationTest(c.unittest.TestCase):
     def test_inplace_change_degrees(self):
         """inplace change of degrees should not be allowed if core spline is
         initialized"""
-        z = c.z2p2d()
-        r = c.r2p2d()
-        b = c.b2p2d()
-        n = c.n2p2d()
 
-        Z, R, B, N = (
-            c.splinepy.Bezier,
-            c.splinepy.RationalBezier,
-            c.splinepy.BSpline,
-            c.splinepy.NURBS,
-        )
-
-        for props, SClass in zip((z, r, b, n), (Z, R, B, N)):
+        for props, spline in zip(
+            c.get_all_splines_as_dict_as_list(),
+            c.get_all_spline_types_empty_as_list(),
+        ):
             # test no core spline
             # this should be fine
-            s = SClass()
-            s.degrees = props["degrees"]
-            s.degrees += 1
+            spline.degrees = props["degrees"]
+            spline.degrees += 1
 
             # this shoundn't be fine
-            s.new_core(**props)
+            spline.new_core(**props)
             with self.assertRaises(ValueError):
-                s.degrees += 1
+                spline.degrees += 1
 
     def test_inplace_change_knot_vectors(self):
         """test inplace change of knot_vectors"""
