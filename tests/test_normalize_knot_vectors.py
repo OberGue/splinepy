@@ -6,11 +6,11 @@ except BaseException:
     import common as c
 
 
-class NormalizeKnotVectorsTest(c.unittest.TestCase):
+class NormalizeKnotVectorsTest(c.SplineBasedTestCase):
     def test_bspline_normalize_knot_vectors(self):
         """ """
         # make "iga book" bspline
-        bspline = c.splinepy.BSpline(**c.b2P2D)
+        bspline = c.bspline_2d()
 
         ref = copy.deepcopy(bspline.knot_vectors)
 
@@ -30,7 +30,7 @@ class NormalizeKnotVectorsTest(c.unittest.TestCase):
 
     def test_nurbs_normalize_knot_vectors(self):
         """ """
-        nurbs = c.splinepy.NURBS(**c.n2P2D)
+        nurbs = c.nurbs_half_circle_2d()
 
         ref = copy.deepcopy(nurbs.knot_vectors)
 
