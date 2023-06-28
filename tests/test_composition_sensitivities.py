@@ -10,6 +10,7 @@ class ComposeSensitivitiesTest(c.SplineBasedTestCase):
     deformation function's control points.
     """
 
+    @c.pytest.mark.unit_test
     def test_composition(self):
         # Here we only try 2D compositions (surface-line is tested in bezman)
         # Init Splines to be tested
@@ -72,6 +73,7 @@ class ComposeSensitivitiesTest(c.SplineBasedTestCase):
         test_splines(surface_rational, inner_polynomial)
         test_splines(surface_rational, inner_rational)
 
+    @c.pytest.mark.integration_test
     def test_composition_sensitivities_on_bsplines(self):
         """Combine Composition sensitivities with BSpline extraction"""
 

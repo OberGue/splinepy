@@ -7,6 +7,7 @@ except BaseException:
 
 
 class NormalizeKnotVectorsTest(c.SplineBasedTestCase):
+    @c.pytest.mark.unit_test
     def test_bspline_normalize_knot_vectors(self):
         """ """
         # make "iga book" bspline
@@ -28,6 +29,7 @@ class NormalizeKnotVectorsTest(c.SplineBasedTestCase):
                 ref_kv, kv
             ), f"{i}. para dim failed to normalize"
 
+    @c.pytest.mark.unit_test
     def test_nurbs_normalize_knot_vectors(self):
         """ """
         nurbs = c.nurbs_half_circle_2d()

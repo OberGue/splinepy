@@ -6,6 +6,7 @@ except BaseException:
     import common as c
 
 
+@c.pytest.mark.integration_test
 class CreatorTest(c.SplineBasedTestCase):
     # Test Extrusion routines
     def test_create_extrude(self):

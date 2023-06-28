@@ -6,6 +6,7 @@ except BaseException:
     import common as c
 
 
+@c.pytest.mark.integration_test
 class jsonExportTest(c.unittest.TestCase):
     def test_gismo_import(self):
         """

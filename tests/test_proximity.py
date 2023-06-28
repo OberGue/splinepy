@@ -5,6 +5,7 @@ except BaseException:
 
 
 class ProximityTest(c.unittest.TestCase):
+    @c.pytest.mark.unit_test
     def test_queries_inside_spline_initial_guess_with_kdt(self):
         """
         Initial guess made with kdt. Mid-point as initial guess tends to fail,

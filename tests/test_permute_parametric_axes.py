@@ -5,6 +5,7 @@ except BaseException:
 
 
 class PermuteParametricAxesTest(c.SplineBasedTestCase):
+    @c.pytest.mark.integration_test
     def test_permute_parametric_axes(self):
         """
         test permute

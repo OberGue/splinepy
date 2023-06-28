@@ -24,3 +24,9 @@ build = ["cp*-many*"]
 
 [tool.cibuildwheel.windows]
 skip = "pp*"
+
+[tool.pytest.ini_options]
+markers = [
+    "unit_test",
+    "integration_test"
+]

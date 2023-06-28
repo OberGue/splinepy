@@ -5,6 +5,7 @@ except BaseException:
 
 
 class TestSplinepyOrderManipulation(c.SplineBasedTestCase):
+    @c.pytest.mark.unit_test
     def test_elevate_degree(self):
         """Test the order elevation function (.elevate_degrees())."""
 
@@ -66,6 +67,7 @@ class TestSplinepyOrderManipulation(c.SplineBasedTestCase):
             )
         )
 
+    @c.pytest.mark.unit_test
     def test_reduce_degree(self):
         """Test the function .reduce_degrees.
         This test also depends on the function .elevate_degrees!"""

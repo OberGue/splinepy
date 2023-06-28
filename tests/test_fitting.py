@@ -18,6 +18,7 @@ class TestSplinepyFitting(c.unittest.TestCase):
     be used for validation.
     """
 
+    @c.pytest.mark.unit_test
     def test_interpolate_curve_2d(self):
         n_sample = 20
         resolution = [3 * n_sample]
@@ -45,6 +46,7 @@ class TestSplinepyFitting(c.unittest.TestCase):
             )
         )
 
+    @c.pytest.mark.unit_test
     def test_approximate_curve_2d(self):
         n_sample = 20
         resolution = [3 * n_sample]
@@ -70,6 +72,7 @@ class TestSplinepyFitting(c.unittest.TestCase):
             )
         )
 
+    @c.pytest.mark.unit_test
     def test_interpolate_surface_3d(self):
         sample_size = [10, 10]
         x = [c.np.linspace(-2, 2, n) for n in sample_size]
@@ -100,6 +103,7 @@ class TestSplinepyFitting(c.unittest.TestCase):
             )
         )
 
+    @c.pytest.mark.unit_test
     def test_approximate_surface_3d(self):
         sample_size = [10, 10]
         x = [c.np.linspace(-1, 1, n) for n in sample_size]

@@ -18,6 +18,7 @@ def convert_and_compare_samples(spline, conversion_list):
         assert type(converted).__qualname__.lower().startswith(convert_to)
 
 
+@c.pytest.mark.integration_test
 class SplineTypeConversionTest(c.SplineBasedTestCase):
     def setUp(self):
         splines = c.get_all_spline_typs_as_list()

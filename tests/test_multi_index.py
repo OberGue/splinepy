@@ -5,6 +5,7 @@ except BaseException:
 
 
 class MultiIndexTest(c.unittest.TestCase):
+    @c.pytest.mark.unit_test
     def test_multi_index(self):
         """
         Test MultiIndex using a round trip of np.ravel_multi_index

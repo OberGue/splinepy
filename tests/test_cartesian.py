@@ -6,6 +6,7 @@ except BaseException:
 from itertools import product
 
 
+@c.pytest.mark.unit_test
 class CartesianProductTest(c.unittest.TestCase):
     def test_cartesian_product(self):
         """

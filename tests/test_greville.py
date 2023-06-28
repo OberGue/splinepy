@@ -5,6 +5,7 @@ except BaseException:
 
 
 class GrevilleAbscissaeTest(c.SplineBasedTestCase):
+    @c.pytest.mark.integration_test
     def test_greville_points(self):
         """
         test permute

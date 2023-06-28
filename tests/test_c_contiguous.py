@@ -4,6 +4,7 @@ except BaseException:
     import common as c
 
 
+@c.pytest.mark.integration_test
 class ContiguousArrayInputTest(c.unittest.TestCase):
     def test_c_contiguous_array_input(self):
         """

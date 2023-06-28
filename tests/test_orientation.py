@@ -17,6 +17,7 @@ class orientationTest(c.unittest.TestCase):
     O-   3--2
     """
 
+    @c.pytest.mark.integration_test
     def test_orientation(self):
         # Init Splines to be tested
         a_s = c.splinepy.Bezier(

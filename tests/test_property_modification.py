@@ -5,6 +5,7 @@ except BaseException:
 
 
 class InplaceModificationTest(c.unittest.TestCase):
+    @c.pytest.mark.unit_test
     def test_inplace_change_degrees(self):
         """inplace change of degrees should not be allowed if core spline is
         initialized"""
@@ -23,6 +24,7 @@ class InplaceModificationTest(c.unittest.TestCase):
             with self.assertRaises(ValueError):
                 spline.degrees += 1
 
+    @c.pytest.mark.unit_test
     def test_inplace_change_knot_vectors(self):
         """test inplace change of knot_vectors"""
         # let's test 3D splines
@@ -62,6 +64,7 @@ class InplaceModificationTest(c.unittest.TestCase):
             # evaluation check
             assert c.np.allclose(raster_query, s.evaluate(modified_query))
 
+    @c.pytest.mark.unit_test
     def test_inplace_change_control_points(self):
         """test inplace changes of control points"""
         dim = 3
@@ -86,6 +89,7 @@ class InplaceModificationTest(c.unittest.TestCase):
             s.control_points /= 2
             assert c.np.allclose(orig.sample(res) / 2, s.sample(res))
 
+    @c.pytest.mark.unit_test
     def test_inplace_change_weights(self):
         """test inplace change of weights by compareing quarter circle"""
         n_q_circle = c.n2p2d_quarter_circle()
@@ -116,6 +120,7 @@ class InplaceModificationTest(c.unittest.TestCase):
 
 
 class CoordinateReferencesModificationTest(c.unittest.TestCase):
+    @c.pytest.mark.unit_test
     def test_coordinate_references(self):
         dim = 3
         res = [3] * dim
@@ -162,6 +167,7 @@ class CoordinateReferencesModificationTest(c.unittest.TestCase):
             )
             assert c.np.allclose(s.evaluate(query), ref_eval)
 
+    @c.pytest.mark.unit_test
     def test_coordinate_references_weight_handling(self):
         """test if coordiante references reflect weights
         and handles weight as expected is apply_weight is True."""

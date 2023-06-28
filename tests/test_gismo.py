@@ -746,6 +746,7 @@ _gismo_export_ref_3d_indent = [
 ]
 
 
+@c.pytest.mark.integration_test
 class gismoExportTest(c.unittest.TestCase):
     def test_gismo_export(self):
         """

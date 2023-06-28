@@ -2,14 +2,11 @@ import os
 import unittest
 
 import numpy as np
+import pytest
 
 import splinepy
 
-__all__ = [
-    "unittest",
-    "np",
-    "splinepy",
-]
+__all__ = ["unittest", "np", "splinepy", "pytest"]
 
 # abbreviation
 # z: bezier

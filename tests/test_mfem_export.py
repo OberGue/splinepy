@@ -295,6 +295,7 @@ _mfem_export_ref_3d = [
 ]
 
 
+@c.pytest.mark.integration_test
 class MFEMExportTest(c.unittest.TestCase):
     def test_mfem_export(self):
         """

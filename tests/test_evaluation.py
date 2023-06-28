@@ -5,6 +5,7 @@ except BaseException:
 
 
 class TestSplinepyEvaluation(c.SplineBasedTestCase):
+    @c.pytest.mark.unit_test
     def test_basis_and_support(self):
         """Test the correct calculation of the basis functions.
         (.basis_and_support())"""
@@ -128,6 +129,7 @@ class TestSplinepyEvaluation(c.SplineBasedTestCase):
             )
         )
 
+    @c.pytest.mark.unit_test
     def test_jacobian(self):
         """Test the correct evaluation of basis function derivatives"""
         # Test both for nurbs as for rational beziers for the integration of a
@@ -221,6 +223,7 @@ class TestSplinepyEvaluation(c.SplineBasedTestCase):
         ).T
         self.assertTrue(c.np.allclose(jacs, expected_jacs))
 
+    @c.pytest.mark.unit_test
     def test_basis_function_derivatives(self):
         """Test the correct evaluation of basis function derivatives"""
         # Cross-testing different libraries
@@ -303,6 +306,7 @@ class TestSplinepyEvaluation(c.SplineBasedTestCase):
             )
         )
 
+    @c.pytest.mark.unit_test
     def test_partition_of_unity(self):
         """Test the partition of unity of the calculated basis functions."""
 
@@ -319,6 +323,7 @@ class TestSplinepyEvaluation(c.SplineBasedTestCase):
         u_nurbs = basis_functions_sum(self.nurbs.basis_and_support(q2D)[0])
         self.assertTrue(c.np.allclose(u_nurbs, c.np.ones(c.np.shape(u_nurbs))))
 
+    @c.pytest.mark.unit_test
     def test_evaluate(self):
         """Test the correct spline evaluation in the physical space.
         (.evaluate())"""
@@ -375,6 +380,7 @@ class TestSplinepyEvaluation(c.SplineBasedTestCase):
             c.np.allclose(self.rational.evaluate(c.q2D), rational_ref_evaluate)
         )
 
+    @c.pytest.mark.unit_test
     def test_derivative(self):
         """Test the correct calculation of the first derivative.
         (.derivative())"""

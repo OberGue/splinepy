@@ -76,6 +76,7 @@ class TestGeometryMapping(c.unittest.TestCase):
         self.query_points2D = c.np.random.rand(13, 2)
         self.query_points3D = c.np.random.rand(17, 3)
 
+    @c.pytest.mark.unit_test
     def test_cross_evaluation_of_different_implementations(self):
         """Divergence and Laplacian are implemented differently when gradients
         are called at the same time
@@ -141,6 +142,7 @@ class TestGeometryMapping(c.unittest.TestCase):
         mapper = self.solution_field_rando.mapper(self.askew_spline2D)
         self.assertRaises(mapper.divergence(self.query_points2D))
 
+    @c.pytest.mark.unit_test
     def test_first_order_derivatives_analytical(self):
         mapper2D = self.solution_field_rando.mapper(self.rotating2D)
         mapper3D = self.solution_field_mono3D.mapper(self.scaling3D)
@@ -197,6 +199,7 @@ class TestGeometryMapping(c.unittest.TestCase):
         )
         self.assertTrue(c.np.allclose(bf_gradient, bf_reference))
 
+    @c.pytest.mark.unit_test
     def test_second_order_analytical(self):
         mapper2D = self.solution_field_rando.mapper(self.rotating2D)
         bf_hessian, support = mapper2D.basis_hessian_and_support(
@@ -243,6 +246,7 @@ class TestGeometryMapping(c.unittest.TestCase):
         )
         self.assertTrue(c.np.allclose(bf_hessian, bf_reference))
 
+    @c.pytest.mark.unit_test
     def test_second_order_fd(self):
         "Use proximity to get points on askew geometry and approcimate hessian"
         mapper = self.solution_field_rando2D.mapper(self.askew_spline2D)

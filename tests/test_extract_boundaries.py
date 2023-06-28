@@ -5,6 +5,7 @@ except BaseException:
 
 
 class extractBoundariesTest(c.unittest.TestCase):
+    @c.pytest.mark.unit_test
     def testExtraction2D(self):
         """Create a Spline, extract boundaries and check validity"""
         # uniform
@@ -44,6 +45,7 @@ class extractBoundariesTest(c.unittest.TestCase):
         list_of_boundaries = bez_el0.extract_boundaries([2])
         self.assertTrue(c.are_splines_equal(list_of_boundaries[0], boundary_2))
 
+    @c.pytest.mark.unit_test
     def testExtraction3D(self):
         """Create a Spline, extract boundaries and check validity"""
         # uniform

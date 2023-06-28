@@ -5,6 +5,7 @@ except BaseException:
 
 
 class TestSplinepyKnotVectorManipulation(c.SplineBasedTestCase):
+    @c.pytest.mark.unit_test
     def test_insert_knot(self):
         """Test the knot insertion function (.insert_knot())."""
 
@@ -69,6 +70,7 @@ class TestSplinepyKnotVectorManipulation(c.SplineBasedTestCase):
             )
         )
 
+    @c.pytest.mark.unit_test
     def test_insert_knot_with_matrix(self):
         """Test the knot insertion function (.insert_knot())."""
 
@@ -134,6 +136,7 @@ class TestSplinepyKnotVectorManipulation(c.SplineBasedTestCase):
             )
         )
 
+    @c.pytest.mark.unit_test
     def test_remove_knot(self):
         """Test the function .remove_knots.
         This test also depends on the function .insert_knots!"""

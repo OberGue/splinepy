@@ -4,6 +4,7 @@ except BaseException:
     import common as c
 
 
+@c.pytest.mark.unit_test
 class BezierExtractionTest(c.SplineBasedTestCase):
     def test_extraction(self):
         """

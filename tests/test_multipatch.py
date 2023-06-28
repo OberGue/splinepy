@@ -47,6 +47,7 @@ class MultipatchTest(c.unittest.TestCase):
 
         return
 
+    @c.pytest.mark.integration_test
     def test_interfaces(self):
         """ """
         # init multipatch with multiple splines
@@ -76,6 +77,7 @@ class MultipatchTest(c.unittest.TestCase):
             ).all()
         )
 
+    @c.pytest.mark.unit_test
     def test_boundaries(self):
         """ """
         # init multipatch with multiple splines
@@ -122,6 +124,7 @@ class MultipatchTest(c.unittest.TestCase):
             ).all()
         )
 
+    @c.pytest.mark.unit_test
     def test_interfaces_and_boundaries(self):
         # 2 --- 3 1 --- 0
         # |  1  | |  3  |
