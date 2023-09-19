@@ -31,8 +31,12 @@ void init_fitting(py::module_&);
 
 // multipatch
 void init_multipatch(py::module_& m);
-
 } // namespace splinepy::py
+
+namespace splinepy::xns {
+namespace py = pybind11;
+void init_splinepy_scene(py::module& m);
+} // namespace splinepy::xns
 
 namespace py = pybind11;
 
@@ -46,4 +50,5 @@ PYBIND11_MODULE(splinepy_core, m) {
   splinepy::py::init_fitting(m);
   splinepy::py::init_knot_insertion_matrix(m);
   splinepy::py::init_multipatch(m);
+  splinepy::xns::init_splinepy_scene(m);
 }
