@@ -288,4 +288,9 @@ setup(
     extras_require={"all": ["gustaf[all]>=0.0.12"], "test": ["funi>=0.0.1"]},
     zip_safe=False,
     license="MIT",
+    entry_points={
+        "console_scripts": [
+            "splinepy=splinepy.__main__:entry",
+        ],
+    },
 )
