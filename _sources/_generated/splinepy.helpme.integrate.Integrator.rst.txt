@@ -1,0 +1,26 @@
+splinepy.helpme.integrate.Integrator
+====================================
+
+.. currentmodule:: splinepy.helpme.integrate
+
+.. autoclass:: Integrator
+   :show-inheritance:
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+     
+     
+       Integrator.volume
+     
+   
+   
+
+   
+   
+   
